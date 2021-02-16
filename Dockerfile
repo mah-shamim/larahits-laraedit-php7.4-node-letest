@@ -11,8 +11,7 @@ RUN sed -i "s/7\.0/7\.2/g" /etc/supervisor/conf.d/supervisord.conf
 RUN sed -i "s/7\.0/7\.2/g" /etc/nginx/sites-available/homestead
 
 # Install Node
-npm install -g n
-n latest
+RUN npm install -g latest
 
 # Change /etc/nginx/sites-available/homestead to accept all domain
 RUN sed -i "s/default_server//g;" /etc/nginx/sites-available/homestead
